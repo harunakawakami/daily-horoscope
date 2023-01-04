@@ -7,24 +7,21 @@ export const ZodiacCards = () => {
       <Box
         w="260px"
         h="260px"
-        bg="white"
-        borderRadius="10px"
-        shadow="md"
         p={4}
         _hover={{ cursor: "pointer", opacity: 0.8 }}
       >
         <Stack textAlign="center">
           <Image
             boxSize="160px"
-            borderRadius="full"
-            alt={userName}
-            src={imageUrl}
+            // alt={userName}
+            // src={imageUrl}
             m="auto"
           />
           <Text fontSize="lg" fontWeight="bold">
-            {userName}
+            {/* {userName} */}
+            test
           </Text>
-          <Text>{fullName}</Text>
+          {/* <Text>{fullName}</Text> */}
         </Stack>
       </Box>
     </>

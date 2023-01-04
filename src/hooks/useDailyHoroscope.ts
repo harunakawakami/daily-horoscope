@@ -1,19 +1,16 @@
 import { useCallback, useState } from "react";
 import axios from "axios";
-import { sign } from "crypto";
 
-// import { useMessage } from "./useMessage";
-// import { User } from "../types/api/user";
+import { Horoscope } from "../types/api/horoscope";
 
-export const useDailyHoroscopr = () => {
-  // const { showMessaege } = useMessage();
+export const useDailyHoroscope = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [horoscope, setHoroscope] = useState<Array<User>>([]);
+  const [horoscope, setHoroscope] = useState<Horoscope | null>(null);
 
   const getDailyHoroscope = useCallback((sign: string) => {
     setIsLoading(true);
     axios
-      .request(options)
+      .post(`https://aztro.sameerkumar.website/?sign=${sign}&day=today`)
       .then((res) => {
         setHoroscope(res.data);
       })
@@ -23,14 +20,4 @@ export const useDailyHoroscopr = () => {
       .finally(() => setIsLoading(false));
   }, []);
   return { getDailyHoroscope, isLoading, horoscope };
-};
-
-const options = {
-  method: "POST",
-  url: "https://sameer-kumar-aztro-v1.p.rapidapi.com/",
-  params: { sign: sign, day: "today" },
-  headers: {
-    "X-RapidAPI-Key": "647abadbffmsh86d59b695712164p128cabjsn03bf29a927ad",
-    "X-RapidAPI-Host": "sameer-kumar-aztro-v1.p.rapidapi.com",
-  },
 };
