@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Box, Image, Stack, Text } from "@chakra-ui/react";
 
 export const ZodiacCards = () => {
