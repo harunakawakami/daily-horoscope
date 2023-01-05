@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Image, Stack, Text } from "@chakra-ui/react";
 
+import _ from "lodash";
+
 type Props = {
   sign: string;
   dateMin: string;
@@ -26,10 +28,10 @@ export const ZodiacCards = (props: Props) => {
             m="auto"
           />
           <Text fontSize="lg" fontWeight="bold">
-            {sign}
+            {_.capitalize(sign)}
           </Text>
           <Text>
-            {dateMin} to {dateMax}
+            {dateMin.replace(/^0/, "")} to {dateMax.replace(/^0/, "")}
           </Text>
         </Stack>
       </Box>

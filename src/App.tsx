@@ -1,15 +1,29 @@
-import { Box } from "@chakra-ui/react";
-import React from "react";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+
 import LandingPage from "./components/pages/LandingPage";
+import DailyHoroscopeResult from "./components/pages/DailyHoroscopeResult";
+
+export const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<LandingPage />}>
+      <Route path="daily-horoscope/:sign" element={<DailyHoroscopeResult />} />
+    </Route>
+  )
+);
 
 function App() {
   return (
     <>
-      <Box minH="100vh" display="flex" alignItems="center">
-        <LandingPage />
-      </Box>
+      <RouterProvider router={router} />
     </>
   );
 }
+
+// fallbackElement={<BigSpinner />}
 
 export default App;
