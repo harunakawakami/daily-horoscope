@@ -1,7 +1,5 @@
-import React, { memo } from "react";
+import React from "react";
 import { Box, Image, Stack, Text } from "@chakra-ui/react";
-import { type } from "@testing-library/user-event/dist/type";
-import { sign } from "crypto";
 
 type Props = {
   sign: string;
@@ -11,17 +9,18 @@ type Props = {
 
 export const ZodiacCards = (props: Props) => {
   const { sign, dateMin, dateMax } = props;
+
   return (
     <>
       <Box
-        w="260px"
-        h="260px"
+        w="200px"
+        h="200px"
         p={4}
         _hover={{ cursor: "pointer", opacity: 0.8 }}
       >
         <Stack textAlign="center">
           <Image
-            boxSize="160px"
+            boxSize="100px"
             alt={sign}
             src={`/zodiac_signs/100/${sign}.png`}
             m="auto"

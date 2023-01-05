@@ -1,12 +1,13 @@
+import { Box } from "@chakra-ui/react";
 import React from "react";
 import LandingPage from "./components/pages/LandingPage";
-
-// import "./App.css";
 
 function App() {
   return (
     <>
-      <LandingPage />
+      <Box minH="100vh" display="flex" alignItems="center">
+        <LandingPage />
+      </Box>
     </>
   );
 }
