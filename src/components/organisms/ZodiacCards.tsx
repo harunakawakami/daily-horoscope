@@ -1,7 +1,16 @@
 import React, { memo } from "react";
 import { Box, Image, Stack, Text } from "@chakra-ui/react";
+import { type } from "@testing-library/user-event/dist/type";
+import { sign } from "crypto";
 
-export const ZodiacCards = () => {
+type Props = {
+  sign: string;
+  dateMin: string;
+  dateMax: string;
+};
+
+export const ZodiacCards = (props: Props) => {
+  const { sign, dateMin, dateMax } = props;
   return (
     <>
       <Box
@@ -13,15 +22,16 @@ export const ZodiacCards = () => {
         <Stack textAlign="center">
           <Image
             boxSize="160px"
-            // alt={userName}
-            // src={imageUrl}
+            alt={sign}
+            src={`/zodiac_signs/100/${sign}.png`}
             m="auto"
           />
           <Text fontSize="lg" fontWeight="bold">
-            {/* {userName} */}
-            test
+            {sign}
           </Text>
-          {/* <Text>{fullName}</Text> */}
+          <Text>
+            {dateMin} to {dateMax}
+          </Text>
         </Stack>
       </Box>
     </>

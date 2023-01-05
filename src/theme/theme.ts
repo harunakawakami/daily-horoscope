@@ -8,11 +8,11 @@ const theme = extendTheme({
         bgRepeat: "no-repeat",
         color: "#F5F5F5",
       },
-      fonts: {
-        heading: `'Unbounded',  sans-serif;`,
-        body: `'Unbounded',  sans-serif;`,
-      },
     },
+  },
+  fonts: {
+    heading: `'Unbounded',  sans-serif;`,
+    body: `'Unbounded',  sans-serif;`,
   },
 });
 
