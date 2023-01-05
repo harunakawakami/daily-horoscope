@@ -1,0 +1,6 @@
+.neonText {
+  color: #f5f5f5;
+  text-shadow: 0 0 7px #f5f5f5, 0 0 10px #f5f5f5, 0 0 21px #f5f5f5,
+    0 0 42px #a87bc3, 0 0 82px #a87bc3, 0 0 92px #a87bc3, 0 0 102px #a87bc3,
+    0 0 151px #a87bc3;
+}
