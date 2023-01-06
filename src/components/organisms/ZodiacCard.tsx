@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Image, Stack, Text } from "@chakra-ui/react";
 
 import _ from "lodash";
+import { Link } from "react-router-dom";
 
 type Props = {
   sign: string;
@@ -9,11 +10,11 @@ type Props = {
   dateMax: string;
 };
 
-export const ZodiacCards = (props: Props) => {
+export const ZodiacCard = (props: Props) => {
   const { sign, dateMin, dateMax } = props;
 
   return (
-    <>
+    <Link to={`daily/${sign}`}>
       <Box
         w="200px"
         h="200px"
@@ -35,6 +36,6 @@ export const ZodiacCards = (props: Props) => {
           </Text>
         </Stack>
       </Box>
-    </>
+    </Link>
   );
 };
