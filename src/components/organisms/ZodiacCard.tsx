@@ -1,8 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Box, Image, Stack, Text } from "@chakra-ui/react";
 
 import _ from "lodash";
-import { Link } from "react-router-dom";
 
 type Props = {
   sign: string;
