@@ -6,12 +6,19 @@ import {
 } from "react-router-dom";
 
 import LandingPage from "./components/pages/LandingPage";
-import DailyHoroscopeResult from "./components/pages/DailyHoroscopeResult";
+import DailyHoroscopeResult, {
+  loader as getDailyHoroscopeLoader,
+} from "./components/pages/DailyHoroscopeResult";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<LandingPage />}>
-      <Route path="daily-horoscope/:sign" element={<DailyHoroscopeResult />} />
+    <Route>
+      <Route path="/" element={<LandingPage />} />
+      <Route
+        path="daily/:sign"
+        element={<DailyHoroscopeResult />}
+        loader={getDailyHoroscopeLoader}
+      />
     </Route>
   )
 );
