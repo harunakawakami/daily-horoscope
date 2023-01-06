@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams, LoaderFunctionArgs } from "react-router-dom";
 
 import _ from "lodash";
 
@@ -6,12 +6,6 @@ import { Box, Container, Flex, Heading, Text } from "@chakra-ui/react";
 import { getDailyHoroscope } from "../../hooks/useDailyHoroscope";
 
 import { Horoscope } from "../../types/api/horoscope";
-
-type ParamProps = {
-  params: {
-    sign: string;
-  };
-};
 
 export default function DailyHoroscopeResult() {
   const horoscopeData = useLoaderData() as Horoscope;
@@ -83,8 +77,7 @@ export default function DailyHoroscopeResult() {
   );
 }
 
-export const loader = ({ params }) => {
-  const signParam = params.sign;
-  const data = getDailyHoroscope(signParam);
+export const loader = ({ params }: LoaderFunctionArgs): Promise<Horoscope> => {
+  const data = getDailyHoroscope(params.sign as string);
   return data;
 };
