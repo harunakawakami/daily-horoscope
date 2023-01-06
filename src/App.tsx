@@ -10,7 +10,8 @@ import DailyHoroscopeResult from "./components/pages/DailyHoroscopeResult";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<LandingPage />}>
+    <Route>
+      <Route path="/" element={<LandingPage />} />
       <Route path="daily/:sign" element={<DailyHoroscopeResult />} />
     </Route>
   )
