@@ -4,6 +4,8 @@ import { Box, Image, Stack, Text } from "@chakra-ui/react";
 
 import _ from "lodash";
 
+import "./ZodiacCard.css";
+
 type Props = {
   sign: string;
   dateMin: string;
@@ -15,12 +17,7 @@ export const ZodiacCard = (props: Props) => {
 
   return (
     <Link to={`daily/${sign}`}>
-      <Box
-        w="200px"
-        h="200px"
-        p={4}
-        _hover={{ cursor: "pointer", opacity: 0.8 }}
-      >
+      <Box w="200px" h="200px" p={4} className="neon">
         <Stack textAlign="center">
           <Image
             boxSize="100px"

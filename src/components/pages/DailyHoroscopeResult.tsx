@@ -15,7 +15,9 @@ export default function DailyHoroscopeResult() {
 
   return (
     <Box>
-      <Text textAlign="center">{horoscopeData.current_date}</Text>
+      <Text textAlign="center" fontSize="2xl" mb={8}>
+        {horoscopeData.current_date}
+      </Text>
       <Heading textAlign="center" as="h1" size="3xl" mb={10}>
         Today's {_.capitalize(sign)} Horoscope
       </Heading>
