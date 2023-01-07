@@ -69,7 +69,7 @@ export default function DailyHoroscopeResult() {
                 w="25px"
                 h="25px"
                 borderRadius="full"
-                background={`#${hexColor}`}
+                background={`${hexColor}`}
               ></Box>
             </Box>
           </Box>
