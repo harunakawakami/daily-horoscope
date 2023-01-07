@@ -3,7 +3,7 @@ import { useLoaderData, useParams, LoaderFunctionArgs } from "react-router-dom";
 import _ from "lodash";
 
 import { Box, Container, Flex, Heading, Text } from "@chakra-ui/react";
-import { getDailyHoroscope } from "../../hooks/useDailyHoroscope";
+import { getFirstDailyHoroscope } from "../../utils/api";
 
 import { Horoscope } from "../../types/api/horoscope";
 
