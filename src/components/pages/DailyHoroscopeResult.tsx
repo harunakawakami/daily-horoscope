@@ -3,11 +3,13 @@ import { Box, Container, Flex, Heading, Text } from "@chakra-ui/react";
 
 import _ from "lodash";
 
-import { getDailyHoroscope } from "../../utils/api";
+import { getDailyHoroscope, getColorCode } from "../../utils/api";
 import { Horoscope } from "../../types/api/horoscope";
 
 export default function DailyHoroscopeResult() {
   const horoscopeData = useLoaderData() as Horoscope;
+  const hexColor = getColorCode(horoscopeData.color);
+
   const { sign } = useParams();
 
   return (
@@ -67,7 +69,7 @@ export default function DailyHoroscopeResult() {
                 w="25px"
                 h="25px"
                 borderRadius="full"
-                background={horoscopeData.color}
+                background={`#${hexColor}`}
               ></Box>
             </Box>
           </Box>
