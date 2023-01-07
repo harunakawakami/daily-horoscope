@@ -56,22 +56,24 @@ export default function DailyHoroscopeResult() {
             justifyContent="space-around"
           >
             <Text mr={5}>{horoscopeData.color}</Text>
-            <Box
-              w="35px"
-              h="35px"
-              borderRadius="full"
-              background="#f5f5f5"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-            >
+            {hexColor && (
               <Box
-                w="25px"
-                h="25px"
+                w="35px"
+                h="35px"
                 borderRadius="full"
-                background={`${hexColor}`}
-              ></Box>
-            </Box>
+                background="#f5f5f5"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Box
+                  w="25px"
+                  h="25px"
+                  borderRadius="full"
+                  background={`${hexColor}`}
+                ></Box>
+              </Box>
+            )}
           </Box>
         </Box>
         <Box
