@@ -1,17 +1,14 @@
 import { useLoaderData, useParams, LoaderFunctionArgs } from "react-router-dom";
+import { Box, Container, Flex, Heading, Text } from "@chakra-ui/react";
 
 import _ from "lodash";
 
-import { Box, Container, Flex, Heading, Text } from "@chakra-ui/react";
-import { getDailyHoroscope } from "../../hooks/useDailyHoroscope";
-
+import { getDailyHoroscope } from "../../utils/api";
 import { Horoscope } from "../../types/api/horoscope";
 
 export default function DailyHoroscopeResult() {
   const horoscopeData = useLoaderData() as Horoscope;
   const { sign } = useParams();
-
-  console.log(horoscopeData);
 
   return (
     <Box>
@@ -31,7 +28,7 @@ export default function DailyHoroscopeResult() {
         justifyContent="space-between"
       >
         <Box
-          w="150px"
+          minW="150px"
           h="80px"
           display="flex"
           flexDirection="column"
@@ -42,7 +39,7 @@ export default function DailyHoroscopeResult() {
           <Text>{horoscopeData.lucky_number}</Text>
         </Box>
         <Box
-          w="150px"
+          minW="150px"
           h="80px"
           display="flex"
           flexDirection="column"
@@ -50,10 +47,33 @@ export default function DailyHoroscopeResult() {
           justifyContent="space-evenly"
         >
           <Text>Lucky Color</Text>
-          <Text>{horoscopeData.color}</Text>
+          <Box
+            display="flex"
+            flexDirection="row"
+            alignItems="center"
+            justifyContent="space-around"
+          >
+            <Text mr={5}>{horoscopeData.color}</Text>
+            <Box
+              w="35px"
+              h="35px"
+              borderRadius="full"
+              background="#f5f5f5"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Box
+                w="25px"
+                h="25px"
+                borderRadius="full"
+                background={horoscopeData.color}
+              ></Box>
+            </Box>
+          </Box>
         </Box>
         <Box
-          w="150px"
+          minW="150px"
           h="80px"
           display="flex"
           flexDirection="column"
@@ -64,7 +84,7 @@ export default function DailyHoroscopeResult() {
           <Text>{horoscopeData.lucky_time}</Text>
         </Box>
         <Box
-          w="150px"
+          minW="150px"
           h="80px"
           display="flex"
           flexDirection="column"
