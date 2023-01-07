@@ -80,6 +80,6 @@ export default function DailyHoroscopeResult() {
 }
 
 export const loader = ({ params }: LoaderFunctionArgs): Promise<Horoscope> => {
-  const data = getDailyHoroscope(params.sign as string);
+  const data = getFirstDailyHoroscope(params.sign as string);
   return data;
 };
