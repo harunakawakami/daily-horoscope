@@ -21,7 +21,7 @@ export default function DailyHoroscopeResult() {
   const { sign } = useParams();
 
   return (
-    <Flex direction="column" alignItems="center" pt={5}>
+    <Flex direction="column" alignItems="center" p={5}>
       <Text textAlign="center" fontSize="2xl" mb={8}>
         {horoscopeData.current_date}
       </Text>
