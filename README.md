@@ -2,7 +2,11 @@
 
 Daily Horoscope is a website for everyone to check their daily horoscope easily.
 
-## Demo
+## Screen
+
+<img width="1278" alt="image" src="https://user-images.githubusercontent.com/83695925/211177924-37297719-6780-4f4a-a3f0-1513a0e90692.png">
+<img width="1382" alt="image" src="https://user-images.githubusercontent.com/83695925/211177932-15a507e0-8e13-41bd-bd05-c4eab0c68acc.png">
+
 
 ## Installation
 
