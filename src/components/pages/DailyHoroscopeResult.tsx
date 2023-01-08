@@ -1,5 +1,13 @@
 import { useLoaderData, useParams, LoaderFunctionArgs } from "react-router-dom";
-import { Box, Container, Flex, Heading, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  Text,
+  Wrap,
+  WrapItem,
+} from "@chakra-ui/react";
 
 import _ from "lodash";
 
@@ -13,7 +21,7 @@ export default function DailyHoroscopeResult() {
   const { sign } = useParams();
 
   return (
-    <Box>
+    <Flex direction="column" alignItems="center">
       <Text textAlign="center" fontSize="2xl" mb={8}>
         {horoscopeData.current_date}
       </Text>
@@ -27,79 +35,93 @@ export default function DailyHoroscopeResult() {
         display="flex"
         flexDirection="row"
         alignItems="center"
-        justifyContent="space-between"
+        justifyContent="space-evenly"
       >
-        <Box
-          minW="150px"
-          h="80px"
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="space-evenly"
-        >
-          <Text>Lucky Number</Text>
-          <Text>{horoscopeData.lucky_number}</Text>
-        </Box>
-        <Box
-          minW="150px"
-          h="80px"
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="space-evenly"
-        >
-          <Text>Lucky Color</Text>
-          <Box
-            display="flex"
-            flexDirection="row"
-            alignItems="center"
-            justifyContent="space-around"
-          >
-            <Text mr={5}>{horoscopeData.color}</Text>
-            {hexColor && (
+        <Wrap spacing="20px" justify="center">
+          <WrapItem>
+            <Box
+              minW="170px"
+              h="70px"
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              justifyContent="space-between"
+              mb={3}
+            >
+              <Text>Lucky Number</Text>
+              <Text>{horoscopeData.lucky_number}</Text>
+            </Box>
+          </WrapItem>
+          <WrapItem>
+            <Box
+              minW="170px"
+              h="70px"
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              justifyContent="space-between"
+              mb={3}
+            >
+              <Text>Lucky Color</Text>
               <Box
-                w="35px"
-                h="35px"
-                borderRadius="full"
-                background="#f5f5f5"
                 display="flex"
+                flexDirection="row"
                 alignItems="center"
-                justifyContent="center"
+                justifyContent="space-between"
               >
-                <Box
-                  w="25px"
-                  h="25px"
-                  borderRadius="full"
-                  background={`${hexColor}`}
-                ></Box>
+                <Text mr={5}>{horoscopeData.color}</Text>
+                {hexColor && (
+                  <Box
+                    w="35px"
+                    h="35px"
+                    borderRadius="full"
+                    background="#f5f5f5"
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                  >
+                    <Box
+                      w="25px"
+                      h="25px"
+                      borderRadius="full"
+                      background={`${hexColor}`}
+                    ></Box>
+                  </Box>
+                )}
               </Box>
-            )}
-          </Box>
-        </Box>
-        <Box
-          minW="150px"
-          h="80px"
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="space-evenly"
-        >
-          <Text>Lucky Time</Text>
-          <Text>{horoscopeData.lucky_time}</Text>
-        </Box>
-        <Box
-          minW="150px"
-          h="80px"
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="space-evenly"
-        >
-          <Text>Mood</Text>
-          <Text>{horoscopeData.mood}</Text>
-        </Box>
+            </Box>
+          </WrapItem>
+          <WrapItem>
+            <Box
+              minW="170px"
+              h="70px"
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              justifyContent="space-between"
+              mb={3}
+            >
+              <Text>Lucky Time</Text>
+              <Text>{horoscopeData.lucky_time}</Text>
+            </Box>
+          </WrapItem>
+          <WrapItem>
+            <Box
+              minW="170px"
+              h="70px"
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              justifyContent="space-between"
+              mb={3}
+            >
+              <Text>Mood</Text>
+              <Text>{horoscopeData.mood}</Text>
+            </Box>
+          </WrapItem>
+        </Wrap>
       </Container>
-    </Box>
+    </Flex>
   );
 }
 
