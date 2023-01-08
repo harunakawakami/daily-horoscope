@@ -18,7 +18,7 @@ export default function LandingPage() {
 
   return (
     <>
-      <Flex align="center" justify="center" direction="column">
+      <Flex align="center" justify="center" direction="column" pt={5}>
         <Heading textAlign="center" as="h1" size="3xl" mb={4}>
           Daily Horoscope
         </Heading>
