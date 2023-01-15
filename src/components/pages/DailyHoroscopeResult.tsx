@@ -12,7 +12,7 @@ import {
 import _ from "lodash";
 
 import { getDailyHoroscope, getColorCode } from "../../utils/api";
-import { Horoscope } from "../../types/api/horoscope";
+import { Horoscope, ZodiacSigns } from "../../types/api/horoscope";
 
 export default function DailyHoroscopeResult() {
   const horoscopeData = useLoaderData() as Horoscope;
@@ -21,7 +21,7 @@ export default function DailyHoroscopeResult() {
   const { sign } = useParams();
 
   return (
-    <Flex direction="column" alignItems="center">
+    <Flex direction="column" alignItems="center" p={5}>
       <Text textAlign="center" fontSize="2xl" mb={8}>
         {horoscopeData.current_date}
       </Text>
@@ -126,6 +126,6 @@ export default function DailyHoroscopeResult() {
 }
 
 export const loader = ({ params }: LoaderFunctionArgs): Promise<Horoscope> => {
-  const data = getDailyHoroscope(params.sign as string);
+  const data = getDailyHoroscope(params.sign as ZodiacSigns);
   return data;
 };
