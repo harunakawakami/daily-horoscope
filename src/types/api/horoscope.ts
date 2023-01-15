@@ -1,3 +1,17 @@
+export type ZodiacSigns =
+  | "aries"
+  | "taurus"
+  | "gemini"
+  | "cancer"
+  | "leo"
+  | "virgo"
+  | "libra"
+  | "scorpio"
+  | "sagittarius"
+  | "capricorn"
+  | "aquarius"
+  | "pisces";
+
 export type Horoscope = {
   color: string;
   compatibility: string;

@@ -1,7 +1,9 @@
 import axios from "axios";
 import namedColors from "color-name-list";
 
-export const getDailyHoroscope = async (sign: string) => {
+import { ZodiacSigns } from "../types/api/horoscope";
+
+export const getDailyHoroscope = async (sign: ZodiacSigns) => {
   try {
     const res = await axios.post(
       `https://aztro.sameerkumar.website/?sign=${sign}&day=today`
@@ -24,5 +26,3 @@ export const getColorCode = (luckyColor: string) => {
     return hexCode;
   }
 };
-
-console.log(getColorCode("shadow"));
